@@ -1,17 +1,17 @@
-import { defineComponent as o, openBlock as l, createElementBlock as a, normalizeClass as s, renderSlot as u } from "vue";
-const c = {
+import { defineComponent as r, openBlock as u, createElementBlock as a, normalizeClass as i, renderSlot as f } from "vue";
+const d = {
   name: "YlButton"
-}, i = /* @__PURE__ */ o({
-  ...c,
+}, p = /* @__PURE__ */ r({
+  ...d,
   props: {
     type: { default: "" },
     plain: { type: Boolean, default: !1 },
     round: { type: Boolean, default: !1 }
   },
   setup(t) {
-    return (n, d) => (l(), a("button", {
+    return (n, e) => (u(), a("button", {
       type: "button",
-      class: s(["yl-button", {
+      class: i(["yl-button", {
         "yl-button--primary": t.type === "primary",
         "yl-button--success": t.type === "success",
         "yl-button--info": t.type === "info",
@@ -21,20 +21,32 @@ const c = {
         "is-round": t.round
       }])
     }, [
-      u(n.$slots, "default")
+      f(n.$slots, "default")
     ], 2));
   }
-}), r = (t) => (t.install = function(n) {
+}), l = (t) => (t.install = function(n) {
   n.component(t.name, t);
 }, t);
-const y = r(i), e = [y], f = (t) => {
-  e.forEach((n) => {
+const y = l(p), m = {
+  name: "YlInput"
+}, b = (t, n) => {
+  const e = t.__vccOpts || t;
+  for (const [o, s] of n)
+    e[o] = s;
+  return e;
+}, _ = { class: "yl-input" };
+function $(t, n, e, o, s, x) {
+  return u(), a("div", _, "\u6211\u662F\u8F93\u5165\u6846\u7EC4\u4EF6");
+}
+const g = /* @__PURE__ */ b(m, [["render", $]]);
+const B = l(g), c = [y, B], h = (t) => {
+  c.forEach((n) => {
     t.component(n.name, n);
   });
-}, m = {
-  install: f,
-  ...e
+}, Y = {
+  install: h,
+  ...c
 };
 export {
-  m as default
+  Y as default
 };
